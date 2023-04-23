@@ -10,9 +10,11 @@
 // Make this const default to port 3000 if there is no argument given for `--port`.
    const http = require('http')
    const fs = require('fs')
-   const minimist = require('minimist')(process.argv.slice(2));
-   const port = minimist; 
-   if (minimist == undefined){
+   const minimist = require('minimist')
+   const argv = minimist(process.argv.slice(2));
+   const port = argv.port; 
+
+   if (port == undefined){
    port = 3000;
    }
     
